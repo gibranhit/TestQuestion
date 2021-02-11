@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/on_boarding_graph"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/selectTestFragment"
+        android:name="mx.com.questionsstress.ui.selecttest.SelectTestFragment"
+        android:label="select_test_fragment"
+        tools:layout="@layout/select_test_fragment" >
+        <action
+            android:id="@+id/action_selectTestFragment_to_testStressFragment"
+            app:destination="@id/testStressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/testStressFragment"
+        android:name="mx.com.questionsstress.ui.teststress.TestStressFragment"
+        android:label="test_stress_fragment"
+        tools:layout="@layout/test_stress_fragment" >
+        <action
+            android:id="@+id/action_testStressFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="mx.com.questionsstress.ui.welcome.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_selectTestFragment"
+            app:destination="@id/selectTestFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="mx.com.questionsstress.ui.results.ResultFragment"
+        android:label="result_fragment"
+        tools:layout="@layout/result_fragment" />
+</navigation>

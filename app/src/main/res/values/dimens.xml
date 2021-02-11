@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Texts dimens -->
+    <dimen name="smallest_text_8">8sp</dimen>
+    <dimen name="smallest_text">10sp</dimen>
+    <dimen name="smaller_text_11">11sp</dimen>
+    <dimen name="smaller_text">12sp</dimen>
+    <dimen name="small_text">14sp</dimen>
+    <dimen name="normal_text">16sp</dimen>
+    <dimen name="big_text">18sp</dimen>
+    <dimen name="bigger_text">20sp</dimen>
+    <dimen name="bigger_text_22">22sp</dimen>
+    <dimen name="biggest_text">24sp</dimen>
+    <dimen name="biggest_text_28">28sp</dimen>
+    <dimen name="biggest_text_30">30sp</dimen>
+    <dimen name="biggest_text_32">32sp</dimen>
+
+    <!-- Separation dimens -->
+    <dimen name="smaller_separation_1_5">1.5dp</dimen>
+    <dimen name="smaller_separation_2">2dp</dimen>
+    <dimen name="smaller_separation">2.5dp</dimen>
+    <dimen name="small_negative_separation">-5dp</dimen>
+    <dimen name="small_separation_3">3dp</dimen>
+    <dimen name="small_separation">5dp</dimen>
+    <dimen name="small_separation_7">7dp</dimen>
+    <dimen name="normal_separation">10dp</dimen>
+    <dimen name="text_elements_separation">7dp</dimen>
+    <dimen name="text_elements_separation_8">8dp</dimen>
+    <dimen name="big_separation">15dp</dimen>
+    <dimen name="big_separation_20">20dp</dimen>
+    <dimen name="bigger_separation">25dp</dimen>
+    <dimen name="bigger_separation_28">28dp</dimen>
+    <dimen name="bigger_separation_negative">-25dp</dimen>
+
+    <dimen name="biggest_separation">30dp</dimen>
+    <dimen name="biggest_separation_32">32dp</dimen>
+    <dimen name="biggest_separation_35">35dp</dimen>
+    <dimen name="large_separation">40dp</dimen>
+    <dimen name="large_separation_45">45dp</dimen>
+    <dimen name="xlarge_separation">50dp</dimen>
+    <dimen name="xlarge_separation_55">55dp</dimen>
+    <dimen name="xxlarge_separation">60dp</dimen>
+    <dimen name="xxlarge_separation_65">65dp</dimen>
+    <dimen name="xxxlarge_separation">70dp</dimen>
+    <dimen name="width_button_default">283dp</dimen>
+    <dimen name="height_button_default">50dp</dimen>
+    <dimen name="width_button_preview">180dp</dimen>
+</resources>

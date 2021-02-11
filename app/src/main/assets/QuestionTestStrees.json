@@ -1,0 +1,346 @@
+{
+  "questions_test_strees": [
+    {
+      "title": "1. ¿Qué edad tiene?",
+      "idSeccion": "01",
+      "idQuestion": 1,
+      "answers": [
+        {
+          "idAnswer": 1,
+          "titleAnswer": "Igual o menor a 30 años"
+        },
+        {
+          "idAnswer": 2,
+          "titleAnswer": "31 - 60 años"
+        },
+        {
+          "idAnswer": 3,
+          "titleAnswer": "Mayor de 60 años"
+        }
+      ]
+    },
+    {
+      "title": "2. Especifique su nivel máximo de estudios",
+      "idSeccion": "01",
+      "idQuestion": 2,
+      "answers": [
+        {
+          "idAnswer": 1,
+          "titleAnswer": "No tengo estudios"
+        },
+        {
+          "idAnswer": 2,
+          "titleAnswer": "Estudios básicos (primaria, secundaria)"
+        },
+        {
+          "idAnswer": 3,
+          "titleAnswer": "Estudios medio superior (preparatoria/técnica)"
+        },
+        {
+          "idAnswer": 4,
+          "titleAnswer": "Estudios superiores (profesionales)"
+        },
+        {
+          "idAnswer": 5,
+          "titleAnswer": "Estudios post-grado (maestría, doctorado)"
+        }
+      ]
+    },
+    {
+      "title": "3. Indique si durante los últimos 2 años, ha realizado inversiones en alguno de estos instrumentos",
+      "idSeccion": "01",
+      "idQuestion": 3,
+      "answers": [
+        {
+          "idAnswer": 1,
+          "titleAnswer": "Ninguno"
+        },
+        {
+          "idAnswer": 2,
+          "titleAnswer": "Instrumentos de deuda nacional bancaria y gubernamental"
+        },
+        {
+          "idAnswer": 3,
+          "titleAnswer": "Sociedades de Inversión de renta fija (deuda)"
+        },
+        {
+          "idAnswer": 4,
+          "titleAnswer": "Sociedades de Inversión de renta variable (capitales)"
+        },
+        {
+          "idAnswer": 5,
+          "titleAnswer": "Papel comercial o Certificados bursátiles"
+        },
+        {
+          "idAnswer": 6,
+          "titleAnswer": "Acciones de empresas registradas en la BMV"
+        },
+        {
+          "idAnswer": 7,
+          "titleAnswer": "Valores estructurados y derivados"
+        },
+        {
+          "idAnswer": 8,
+          "titleAnswer": "Acciones de empresas registradas en el SIC"
+        },
+        {
+          "idAnswer": 9,
+          "titleAnswer": "Instrumentos de deuda extranjera"
+        }
+      ]
+    },
+    {
+      "title": "4. ¿Con qué frecuencia suele realizar operaciones de inversión en el plazo de un año?",
+      "idSeccion": "01",
+      "idQuestion": 4,
+      "answers": [
+        {
+          "idAnswer": 1,
+          "titleAnswer": "No he realizado operaciones de inversión"
+        },
+        {
+          "idAnswer": 2,
+          "titleAnswer": "Menos de 5 operaciones al año"
+        },
+        {
+          "idAnswer": 3,
+          "titleAnswer": "Entre 5 y 15 operaciones al año"
+        },
+        {
+          "idAnswer": 4,
+          "titleAnswer": "Más de 15 operaciones al año"
+        }
+      ]
+    },
+    {
+      "title": "5. ¿Cuál es el horizonte de inversión de su portafolio actual?",
+      "idSeccion": "01",
+      "idQuestion": 5,
+      "answers": [
+        {
+          "idAnswer": 1,
+          "titleAnswer": "No tengo un portafolio de inversión en la actualidad"
+        },
+        {
+          "idAnswer": 2,
+          "titleAnswer": "Menos de 1 año (corto plazo)"
+        },
+        {
+          "idAnswer": 3,
+          "titleAnswer": "De 1 año a 3 años (mediano plazo)"
+        },
+        {
+          "idAnswer": 4,
+          "titleAnswer": "Mas de 3 años (largo plazo)"
+        }
+      ]
+    },
+    {
+      "title": "6. Su ingreso mensual proviene principalmente de, ¿cuántas fuentes?",
+      "idSeccion": "02",
+      "idQuestion": 1,
+      "answers": [
+        {
+          "idAnswer": 1,
+          "titleAnswer": "1"
+        },
+        {
+          "idAnswer": 2,
+          "titleAnswer": "2"
+        },
+        {
+          "idAnswer": 3,
+          "titleAnswer": "3"
+        },
+        {
+          "idAnswer": 4,
+          "titleAnswer": "Más de 3"
+        }
+      ]
+    },
+    {
+      "title": "7. ¿Qué porcentaje de su ingreso mensual destinará para realizar inversiones?",
+      "idSeccion": "02",
+      "idQuestion": 2,
+      "answers": [
+        {
+          "idAnswer": 1,
+          "titleAnswer": "0% - 25%"
+        },
+        {
+          "idAnswer": 2,
+          "titleAnswer": "26% - 50%"
+        },
+        {
+          "idAnswer": 3,
+          "titleAnswer": "51% - 75%"
+        },
+        {
+          "idAnswer": 4,
+          "titleAnswer": "76 - 100%"
+        }
+      ]
+    },
+    {
+      "title": "8. Indique el porcentaje de los compromisos financieros mensuales en función de sus ingresos mensuales",
+      "idSeccion": "02",
+      "idQuestion": 3,
+      "answers": [
+        {
+          "idAnswer": 1,
+          "titleAnswer": "0% - 25%"
+        },
+        {
+          "idAnswer": 2,
+          "titleAnswer": "26% - 50%"
+        },
+        {
+          "idAnswer": 3,
+          "titleAnswer": "51% - 75%"
+        },
+        {
+          "idAnswer": 4,
+          "titleAnswer": "76 - 100%"
+        }
+      ]
+    },
+    {
+      "title": "9. Indique el porcentaje de los recursos invertidos en la entidad financiera que representa en relación a los invertidos en otras",
+      "idSeccion": "02",
+      "idQuestion": 4,
+      "answers": [
+        {
+          "idAnswer": 1,
+          "titleAnswer": "0% - 25%"
+        },
+        {
+          "idAnswer": 2,
+          "titleAnswer": "26% - 50%"
+        },
+        {
+          "idAnswer": 3,
+          "titleAnswer": "51% - 75%"
+        },
+        {
+          "idAnswer": 4,
+          "titleAnswer": "76 - 100%"
+        }
+      ]
+    },
+    {
+      "title": "10. ¿Cuándo espera necesitar liquidez como respuesta a sus compromisos financieros?",
+      "idSeccion": "02",
+      "idQuestion": 5,
+      "answers": [
+        {
+          "idAnswer": 1,
+          "titleAnswer": "Menos de 6 meses"
+        },
+        {
+          "idAnswer": 2,
+          "titleAnswer": "Entre 6 meses y 1 año"
+        },
+        {
+          "idAnswer": 3,
+          "titleAnswer": "Entre 1 año y 3 años"
+        },
+        {
+          "idAnswer": 4,
+          "titleAnswer": "Mas de 3 años"
+        }
+      ]
+    },
+    {
+      "title": "11. ¿Cuál es su propósito con esa inversión?",
+      "idSeccion": "03",
+      "idQuestion": 1,
+      "answers": [
+        {
+          "idAnswer": 1,
+          "titleAnswer": "Proteger mi dinero contra inflación"
+        },
+        {
+          "idAnswer": 2,
+          "titleAnswer": "Comprar un bien inmueble"
+        },
+        {
+          "idAnswer": 3,
+          "titleAnswer": "Aumentar mi patrimonio"
+        },
+        {
+          "idAnswer": 4,
+          "titleAnswer": "Ahorrar para mi retiro"
+        }
+      ]
+    },
+    {
+      "title": "12. ¿Cuál es la duración prevista para esta inversión?",
+      "idSeccion": "03",
+      "idQuestion": 2,
+      "answers": [
+        {
+          "idAnswer": 1,
+          "titleAnswer": "Menos de 6 meses"
+        },
+        {
+          "idAnswer": 2,
+          "titleAnswer": "Entre 6 meses y 1 año"
+        },
+        {
+          "idAnswer": 3,
+          "titleAnswer": "Entre 1 año y 3 años"
+        },
+        {
+          "idAnswer": 4,
+          "titleAnswer": "Mas de 3 años"
+        }
+      ]
+    },
+    {
+      "title": "13. Indique cómo delimitaría el objetivo de su inversión considerando un horizonte de inversión de 1 año",
+      "idSeccion": "03",
+      "idQuestion": 3,
+      "answers": [
+        {
+          "idAnswer": 1,
+          "titleAnswer": "Protección de capital sin asumir ningun riesgo de disminución del valor del portafolio"
+        },
+        {
+          "idAnswer": 2,
+          "titleAnswer": "Ganancia ligeramente arriba de la inflación asumiendo 3% de riesgo de disminución del valor del portafolio"
+        },
+        {
+          "idAnswer": 3,
+          "titleAnswer": "Ganancia sustancialmente arriba de la inflación asumiendo 10% de riesgo de disminución del valor del portafolio"
+        },
+        {
+          "idAnswer": 4,
+          "titleAnswer": "Ganancia significativamente arriba de la inflación asumiendo 20% de riesgo de disminución del valor del portafolio"
+        }
+      ]
+    },
+    {
+      "title": "14. ¿Con cuál de estas situaciones se identifica mejor, si el valor de un instrumento de su portafolio baja?",
+      "idSeccion": "03",
+      "idQuestion": 4,
+      "answers": [
+        {
+          "idAnswer": 1,
+          "titleAnswer": "Vendería inmediatamente la totalidad de la inversión en ese instrumento"
+        },
+        {
+          "idAnswer": 2,
+          "titleAnswer": "Vendería sólo parte de la inversión en ese instrumento"
+        },
+        {
+          "idAnswer": 3,
+          "titleAnswer": "Consultaría qué decisión tomar"
+        },
+        {
+          "idAnswer": 4,
+          "titleAnswer": "No vendería sabiendo que a largo plazo puedo"
+        }
+      ]
+    }
+  ]
+}

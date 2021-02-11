@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.welcome.WelcomeFragment">
+
+    <include layout="@layout/layout_header" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.20" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:elevation="@dimen/small_separation"
+        android:background="@drawable/background_round_body"
+        android:layout_marginStart="@dimen/big_separation_20"
+        android:layout_marginEnd="@dimen/big_separation_20"
+        android:padding="@dimen/big_separation_20"
+        app:layout_constraintTop_toBottomOf="@+id/guideBody"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+
+        <ImageView
+            android:id="@+id/ivSelectTest"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:src="@drawable/ic_team_work"
+            android:padding="@dimen/big_separation_20"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/tvTitleWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/ivSelectTest"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Aqui podras realizar varios test sobre tu estabilidad emocional y te daremos consejos de como solucionarlos"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="@font/proximanovaextrabold"
+            android:textSize="@dimen/big_text"
+            android:layout_marginTop="@dimen/biggest_separation"/>
+
+        <Button
+            android:id="@+id/buttonWelcome"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitleWelcome"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Ingresar"
+            android:textAllCaps="false"
+            android:background="@drawable/shape_button_round"
+            android:layout_marginTop="@dimen/biggest_separation"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
