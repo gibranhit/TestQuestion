@@ -1,48 +1,34 @@
 package mx.com.questionsstress.ui.teststress
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_question.*
 import mx.com.questionsstress.R
 import mx.com.questionsstress.ui.adapter.PainLevelAdapter
+import mx.com.questionsstress.ui.model.Answer
 import mx.com.questionsstress.ui.teststress.listener.BaseOnClickListener
 import mx.com.questionsstress.utils.Helper.getPainLevelList
-import mx.com.questionsstress.utils.extensions.toast
 
+class QuestionFragment : Fragment(R.layout.fragment_question) {
 
-private const val ARG_PARAM1 = "param1"
-
-class QuestionFragment : Fragment() {
-
-    private var param1: String? = null
+    private var param1: Answer? = null
 
     var listener: BaseOnClickListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
+            param1 = it.getParcelable(ARG_PARAM1)
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_question, container, false)
-    }
-
     companion object {
-        @JvmStatic
-        fun newInstance(param1: String) =
+        private const val ARG_PARAM1 = "param1"
+        fun newInstance(param1: Answer) =
             QuestionFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
+                    putParcelable(ARG_PARAM1, param1)
                 }
             }
     }
@@ -53,13 +39,13 @@ class QuestionFragment : Fragment() {
     }
 
     private fun setUpData() {
-        tvTitleQuestion.text = param1
+        tvTitleQuestion.text = param1?.answer
+        Glide.with(requireContext()).load(param1?.image).into(ivSelectTest)
         rvPainLevel.apply {
             adapter = PainLevelAdapter(getPainLevelList()) { pain, position ->
                 listener?.onSelectItem(pain, position)
             }
         }
     }
-
 
 }

@@ -3,17 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/on_boarding_graph"
-    app:startDestination="@id/welcomeFragment">
+    app:startDestination="@id/signInFragment">
 
-    <fragment
-        android:id="@+id/selectTestFragment"
-        android:name="mx.com.questionsstress.ui.selecttest.SelectTestFragment"
-        android:label="select_test_fragment"
-        tools:layout="@layout/select_test_fragment" >
-        <action
-            android:id="@+id/action_selectTestFragment_to_testStressFragment"
-            app:destination="@id/testStressFragment" />
-    </fragment>
     <fragment
         android:id="@+id/testStressFragment"
         android:name="mx.com.questionsstress.ui.teststress.TestStressFragment"
@@ -21,7 +12,9 @@
         tools:layout="@layout/test_stress_fragment" >
         <action
             android:id="@+id/action_testStressFragment_to_resultFragment"
-            app:destination="@id/resultFragment" />
+            app:destination="@id/resultFragment"
+            app:popUpTo="@id/dashboardFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
@@ -29,12 +22,39 @@
         android:label="fragment_welcome"
         tools:layout="@layout/fragment_welcome" >
         <action
-            android:id="@+id/action_welcomeFragment_to_selectTestFragment"
-            app:destination="@id/selectTestFragment" />
+            android:id="@+id/action_welcomeFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
         android:name="mx.com.questionsstress.ui.results.ResultFragment"
         android:label="result_fragment"
-        tools:layout="@layout/result_fragment" />
+        tools:layout="@layout/result_fragment" >
+        <action
+            android:id="@+id/action_resultFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="mx.com.questionsstress.ui.dashboard.DashboardFragment"
+        android:label="dashboard_fragment"
+        tools:layout="@layout/dashboard_fragment" >
+        <action
+            android:id="@+id/action_dashboardFragment_to_testStressFragment"
+            app:destination="@id/testStressFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_resultFragment"
+            app:destination="@id/resultFragment"
+            app:popUpTo="@id/dashboardFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="mx.com.questionsstress.ui.login.SignInFragment"
+        android:label="sign_in_fragment"
+        tools:layout="@layout/sign_in_fragment" >
+        <action
+            android:id="@+id/action_signInFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment"/>
+    </fragment>
 </navigation>

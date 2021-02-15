@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dashboard_graph"
+    app:startDestination="@id/selectTestFragment">
+
+    <fragment
+        android:id="@+id/selectTestFragment"
+        android:name="mx.com.questionsstress.ui.selecttest.SelectTestFragment"
+        android:label="select_test_fragment"
+        tools:layout="@layout/select_test_fragment" />
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="mx.com.questionsstress.ui.dashboard.search.SearchFragment"
+        android:label="search_fragment"
+        tools:layout="@layout/search_fragment" />
+
+</navigation>

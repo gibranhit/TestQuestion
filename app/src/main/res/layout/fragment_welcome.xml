@@ -31,7 +31,7 @@
             android:id="@+id/ivSelectTest"
             android:layout_width="wrap_content"
             android:layout_height="300dp"
-            android:src="@drawable/ic_team_work"
+            android:src="@drawable/ic_welcome"
             android:padding="@dimen/big_separation_20"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +52,7 @@
             android:textSize="@dimen/big_text"
             android:layout_marginTop="@dimen/biggest_separation"/>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonWelcome"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
@@ -60,6 +60,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:text="Ingresar"
+            android:textColor="@color/white"
             android:textAllCaps="false"
             android:background="@drawable/shape_button_round"
             android:layout_marginTop="@dimen/biggest_separation"/>

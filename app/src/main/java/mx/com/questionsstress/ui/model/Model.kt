@@ -15,3 +15,12 @@ data class QuestionTest(var answer: Int,
 @Parcelize
 data class PainLevel(var image: Int,
                      var level: Int): Parcelable
+
+@Parcelize
+data class Answer(var image: Int,
+                     var answer: String): Parcelable
+
+@Parcelize
+data class ResultTest(var title: String,
+                      var total: Int,
+                      var image: Int): Parcelable

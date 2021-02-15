@@ -1,5 +1,8 @@
 <resources>
-    <string name="app_name">QuestionsStress</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="app_name">MyTest</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="password">Contraseña</string>
+    <string name="username">Usuario</string>
+    <string name="enter_data">Ingresa los siguientes datos</string>
+    <string name="text_sign_in">Inicio de sesion</string>
 </resources>

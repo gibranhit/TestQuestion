@@ -73,9 +73,12 @@ class TestStressFragment : Fragment() {
                 val painLevel = item as PainLevel
                 setQuestion(painLevel, positionFragment)
                 if (vpQuestions.currentItem == list.size -1){
-                    findNavController().navigate(R.id.action_testStressFragment_to_resultFragment)
                     val count = listQuestion.map { it.level }.sum()
-                    Toast.makeText(requireContext(), "$count", Toast.LENGTH_SHORT).show()
+                    val bundle = Bundle().apply {
+                        putInt("count", count)
+                        putString("title", test?.name)
+                    }
+                    findNavController().navigate(R.id.action_testStressFragment_to_resultFragment, bundle)
                 }
                 vpQuestions.currentItem = positionFragment + 1
             }

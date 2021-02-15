@@ -3,11 +3,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.results.ResultFragment">
 
-    <com.github.mikephil.charting.charts.BarChart
-        android:id="@+id/barChart"
+    <include layout="@layout/layout_header" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideBody"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.20" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:elevation="@dimen/small_separation"
+        android:background="@drawable/background_round_body"
+        android:layout_marginStart="@dimen/big_separation_20"
+        android:layout_marginEnd="@dimen/big_separation_20"
+        android:padding="@dimen/big_separation_20"
+        app:layout_constraintTop_toBottomOf="@+id/guideBody"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tvAdvice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_separation"
+            android:padding="@dimen/normal_separation"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="@dimen/big_text"
+            android:textColor="@color/colorPrimary"
+            android:text="Tienes un buen equilibrio, continúa así y contagia a los demás de tus estrategias de afrontamiento"/>
+
+        <com.anychart.AnyChartView
+            android:id="@+id/anyChart"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/tvAdvice"
+            app:layout_constraintBottom_toTopOf="@id/buttonFinish"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="@dimen/big_separation"/>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonFinish"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Finalizar"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:layout_margin="@dimen/normal_separation"
+            android:background="@drawable/shape_button_round"
+            android:layout_marginTop="@dimen/biggest_separation"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

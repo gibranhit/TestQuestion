@@ -23,7 +23,7 @@ class WelcomeFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         tvTitle.text = "Bienvenido"
         buttonWelcome.setOnClickListener {
-            findNavController().navigate(R.id.action_welcomeFragment_to_selectTestFragment)
+            findNavController().navigate(R.id.action_welcomeFragment_to_dashboardFragment)
         }
     }
 

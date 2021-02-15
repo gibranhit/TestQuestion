@@ -32,4 +32,15 @@
         tools:itemCount="5"
         tools:listitem="@layout/item_pain_level"/>
 
+    <ImageView
+        android:id="@+id/ivSelectTest"
+        android:layout_width="250dp"
+        android:layout_height="300dp"
+        android:src="@drawable/ic_questions"
+        android:padding="@dimen/big_separation_20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
