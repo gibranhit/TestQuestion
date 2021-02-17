@@ -23,6 +23,7 @@
         android:layout_gravity="bottom"
         app:menu="@menu/bottom_menu_navigation"
         app:labelVisibilityMode="unlabeled"
+        app:itemIconSize="@dimen/large_separation"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

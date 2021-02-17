@@ -32,7 +32,7 @@
         android:id="@+id/ivSelectTest"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/ic_search_test"
+        android:src="@drawable/ic_search"
         android:padding="@dimen/big_separation_20"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

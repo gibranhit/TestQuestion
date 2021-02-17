@@ -1,0 +1,122 @@
+{
+  "project_info": {
+    "project_number": "829404191935",
+    "firebase_url": "https://registroalumnos-23d72.firebaseio.com",
+    "project_id": "registroalumnos-23d72",
+    "storage_bucket": "registroalumnos-23d72.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:829404191935:android:3b39090a254e1133",
+        "android_client_info": {
+          "package_name": "com.example.gibran.registroalumnos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "829404191935-sj7ddedj0iqsv4fbo8cgheovm5q0aadc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gibran.registroalumnos",
+            "certificate_hash": "0fa15df8ee49fcbd87fa59e46d165776cf5a182c"
+          }
+        },
+        {
+          "client_id": "829404191935-uif6nun47nhps8936oo8cinjvn3ai993.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNdk8SeoPtkmzYMJiJ1l1a5AKIdvtSUGY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "829404191935-uif6nun47nhps8936oo8cinjvn3ai993.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:829404191935:android:f59cd8ffced4c158c57a0a",
+        "android_client_info": {
+          "package_name": "mx.com.questionsstress"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "829404191935-sej71shcbgpi6c6f8ersrv54rnoon3rg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mx.com.questionsstress",
+            "certificate_hash": "c35c91e1c12a5970a24b8ec6c66bd5eb32383691"
+          }
+        },
+        {
+          "client_id": "829404191935-uif6nun47nhps8936oo8cinjvn3ai993.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNdk8SeoPtkmzYMJiJ1l1a5AKIdvtSUGY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "829404191935-uif6nun47nhps8936oo8cinjvn3ai993.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:829404191935:android:0ee0f86202edfb13c57a0a",
+        "android_client_info": {
+          "package_name": "mx.com.searchenrollment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "829404191935-u44p6d0bk1bpg7mbf1h0ei6m7ho8vef8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mx.com.searchenrollment",
+            "certificate_hash": "c35c91e1c12a5970a24b8ec6c66bd5eb32383691"
+          }
+        },
+        {
+          "client_id": "829404191935-uif6nun47nhps8936oo8cinjvn3ai993.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNdk8SeoPtkmzYMJiJ1l1a5AKIdvtSUGY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "829404191935-uif6nun47nhps8936oo8cinjvn3ai993.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

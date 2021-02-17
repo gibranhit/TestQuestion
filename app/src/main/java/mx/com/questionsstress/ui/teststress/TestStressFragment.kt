@@ -53,12 +53,15 @@ class TestStressFragment : Fragment() {
 
     private fun setUpViewPager() {
         val questions = getListQuestionStress()
+        val maxQuestions = questions.size
+        tvAnswerCount.text = "Pregunta 1/$maxQuestions"
         val questionsFragments = getFragments(questions)
         vpQuestions.apply {
             isUserInputEnabled = false
             adapter = QuestionsViewPagerAdapter(this@TestStressFragment, questionsFragments)
             registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
                 override fun onPageSelected(position: Int) {
+                    tvAnswerCount.text = "Pregunta ${position + 1}/$maxQuestions"
                     movedFragment(position, questionsFragments)
                     super.onPageSelected(position)
                 }

@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import kotlinx.android.synthetic.main.layout_header.*
 import kotlinx.android.synthetic.main.search_fragment.*
 import mx.com.questionsstress.R
 import mx.com.questionsstress.ui.dashboard.listener.DashboardCommunication
@@ -33,6 +34,7 @@ class SearchFragment : Fragment(R.layout.search_fragment) {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        tvTitle.text = "Resultado de tests"
         setUpTest()
     }
 

@@ -28,4 +28,16 @@ class MainActivity : AppCompatActivity(), DashboardCommunication {
         }
         findNavController(this, R.id.nav_host_fragment).navigate(R.id.action_dashboardFragment_to_resultFragment, bundle)
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val navController = findNavController(this, R.id.nav_host_fragment)
+        when (navController.currentDestination?.label) {
+            "dashboard_fragment" -> findNavController(this, R.id.nav_host_fragment).popBackStack(R.id.signInFragment, true)
+            "sign_in_fragment" -> finish()
+            else -> navController.popBackStack()
+        }
+
+
+    }
 }

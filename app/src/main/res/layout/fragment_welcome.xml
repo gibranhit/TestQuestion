@@ -45,7 +45,7 @@
             app:layout_constraintTop_toBottomOf="@id/ivSelectTest"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="Aqui podras realizar varios test sobre tu estabilidad emocional y te daremos consejos de como solucionarlos"
+            android:text="Bienvenido!\n MyTests es una aplicación en donde podrás realizar diferentes tests sobre diferentes tipos de estrés y se te darán posibles soluciones dependiendo los resultados."
             android:gravity="center"
             android:textColor="@color/colorPrimary"
             android:fontFamily="@font/proximanovaextrabold"

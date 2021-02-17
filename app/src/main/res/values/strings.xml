@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyTest</string>
+    <string name="app_name">MyTests</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="password">Contraseña</string>
     <string name="username">Usuario</string>

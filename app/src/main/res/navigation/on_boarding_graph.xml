@@ -12,9 +12,7 @@
         tools:layout="@layout/test_stress_fragment" >
         <action
             android:id="@+id/action_testStressFragment_to_resultFragment"
-            app:destination="@id/resultFragment"
-            app:popUpTo="@id/dashboardFragment"
-            app:popUpToInclusive="true"/>
+            app:destination="@id/resultFragment" />
     </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
@@ -34,6 +32,7 @@
             android:id="@+id/action_resultFragment_to_dashboardFragment"
             app:destination="@id/dashboardFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="mx.com.questionsstress.ui.dashboard.DashboardFragment"
@@ -44,9 +43,10 @@
             app:destination="@id/testStressFragment" />
         <action
             android:id="@+id/action_dashboardFragment_to_resultFragment"
-            app:destination="@id/resultFragment"
-            app:popUpTo="@id/dashboardFragment"
-            app:popUpToInclusive="true"/>
+            app:destination="@id/resultFragment"/>
+        <action
+            android:id="@+id/action_dashboardFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
     </fragment>
     <fragment
         android:id="@+id/signInFragment"

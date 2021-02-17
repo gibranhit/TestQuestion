@@ -10,7 +10,11 @@
     <color name="blue">#869AFC</color>
     <color name="yellow">#FCF086</color>
     <color name="background">#FCD586</color>
-    <color name="colorPrimary">#292E63</color>
+    <color name="colorPrimary">#3faaf6</color>
     <color name="colorPrimaryDark">#4961EC</color>
-    <color name="color">#F44336</color>
+    <color name="colorRed">#F44336</color>
+    <color name="colorOrange">#ef6c00</color>
+    <color name="colorYellow">#FFEB3B</color>
+    <color name="colorGreen">#5CEF00</color>
+    <color name="colorBlue">#03A9F4</color>
 </resources>

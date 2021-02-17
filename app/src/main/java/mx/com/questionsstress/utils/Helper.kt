@@ -11,9 +11,9 @@ import mx.com.questionsstress.ui.teststress.QuestionFragment
 object Helper {
 
     fun getListTest()
-            = listOf(Test("Test de estres laboral", R.drawable.ic_suitcase),
-        Test("Test de estres escolar", R.drawable.ic_school),
-        Test("Test de estres por covid",R.drawable.ic_coronavirus)).toMutableList()
+            = listOf(Test("Test de estrés laboral", R.drawable.ic_suitcase),
+        Test("Test de estrés escolar", R.drawable.ic_school),
+        Test("Test de estrés por covid",R.drawable.ic_coronavirus)).toMutableList()
 
     fun getPainLevelList()
             = listOf(PainLevel( R.drawable.ic_5, 2),
@@ -40,10 +40,9 @@ object Helper {
     fun getFragments(list: List<Answer>): MutableList<Fragment>
         = list.map { QuestionFragment.newInstance(it) }.toMutableList()
 
-
     fun getSearchList()
-            = listOf(ResultTest( "Test de estres laboral",17 , R.drawable.ic_5),
-        ResultTest( "Test de estres laboral",40 , R.drawable.ic_2),
-        ResultTest( "Test de estres laboral",50 , R.drawable.ic_3)).toMutableList()
+            = listOf(ResultTest( "Test de estrés laboral",40 , R.drawable.ic_3),
+            ResultTest( "Test de estrés laboral",50 , R.drawable.ic_2),
+            ResultTest( "Test de estrés laboral",61 , R.drawable.ic_1)).toMutableList()
 
 }

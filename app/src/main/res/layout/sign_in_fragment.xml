@@ -6,14 +6,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.login.SignInFragment">
 
-    <include layout="@layout/layout_header" />
+
+    <include layout="@layout/layout_header_sign_in" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideBody"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.20" />
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -22,7 +31,7 @@
         android:background="@drawable/background_round_body"
         android:layout_marginStart="@dimen/big_separation_20"
         android:layout_marginEnd="@dimen/big_separation_20"
-        app:layout_constraintTop_toBottomOf="@+id/guideBody"
+        app:layout_constraintTop_toTopOf="@+id/guideHeader"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
@@ -30,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="@dimen/large_separation"
+            android:layout_marginTop="100dp"
             android:text="@string/enter_data"
             android:textColor="#000"
             android:textSize="22sp"
@@ -106,15 +115,27 @@
             app:layout_constraintTop_toBottomOf="@id/til_password"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="Iniciar Sesion"
+            android:text="Iniciar Sesión"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:background="@drawable/shape_button_round"
             android:layout_marginTop="@dimen/biggest_separation"
             android:layout_marginStart="@dimen/big_separation"
-            android:layout_marginEnd="@dimen/big_separation"/>
+            android:layout_marginEnd="@dimen/big_separation"
+            android:textSize="@dimen/big_text"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/ivProfileLogo"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_profile_pic"
+        app:layout_constraintTop_toTopOf="@id/guideBody"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="10dp"
+        android:elevation="10dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
