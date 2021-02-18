@@ -7,3 +7,7 @@ interface DashboardCommunication{
     fun selectTest(test: Test)
     fun selectSearchTest(result: ResultTest)
 }
+
+interface OnBackStack{
+    fun onBackPressed()
+}

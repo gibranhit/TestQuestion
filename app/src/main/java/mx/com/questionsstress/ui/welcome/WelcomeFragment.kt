@@ -21,7 +21,7 @@ class WelcomeFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        tvTitle.text = "Bienvenido"
+        tvTitle.text = "¡Bienvenido!"
         buttonWelcome.setOnClickListener {
             findNavController().navigate(R.id.action_welcomeFragment_to_dashboardFragment)
         }

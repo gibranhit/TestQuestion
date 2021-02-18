@@ -8,9 +8,10 @@ import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.layout_header.*
 import kotlinx.android.synthetic.main.result_fragment.*
 import mx.com.questionsstress.R
+import mx.com.questionsstress.ui.dashboard.listener.OnBackStack
 
 
-class ResultFragment : Fragment(R.layout.result_fragment) {
+class ResultFragment : Fragment(R.layout.result_fragment), OnBackStack {
 
     private var count = 0
     private var title: String? = ""
@@ -34,7 +35,7 @@ class ResultFragment : Fragment(R.layout.result_fragment) {
         if (count > 60)
             tvAdvice.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorRed))
         buttonFinish.setOnClickListener {
-            findNavController().popBackStack(R.id.dashboardFragment, true)
+            findNavController().popBackStack(R.id.dashboardFragment, false)
         }
         progressHorizontal.progress = count
         progressHorizontal.progressDrawable.setTint(
@@ -80,7 +81,12 @@ class ResultFragment : Fragment(R.layout.result_fragment) {
         count <= 60 -> "Te encuentras en una fase de agotamiento de recursos " +
                 "fisiológicos con desgaste físico y mental. Esto puede " +
                 "tener consecuencias más serias para tu salud. "
-        else -> "Busca ayuda"
+        else -> "Si este nivel de estrés persiste en los últimos días, " +
+                "debes buscar ayuda profesional para poder sentirte mejor. "
+    }
+
+    override fun onBackPressed() {
+        findNavController().popBackStack(R.id.dashboardFragment, false)
     }
 
 }

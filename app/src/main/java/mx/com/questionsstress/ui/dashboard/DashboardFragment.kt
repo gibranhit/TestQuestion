@@ -7,15 +7,17 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import kotlinx.android.synthetic.main.dashboard_fragment.*
 import mx.com.questionsstress.R
 import mx.com.questionsstress.ui.dashboard.listener.DashboardCommunication
+import mx.com.questionsstress.ui.dashboard.listener.OnBackStack
 import mx.com.questionsstress.ui.model.Test
 
-class DashboardFragment : Fragment(R.layout.dashboard_fragment) {
+class DashboardFragment : Fragment(R.layout.dashboard_fragment), OnBackStack {
 
     companion object {
         fun newInstance() = DashboardFragment()
@@ -45,5 +47,9 @@ class DashboardFragment : Fragment(R.layout.dashboard_fragment) {
 
     private fun isValidatedDestination(controller: NavController, destination: Int): Boolean =
         destination != controller.currentDestination?.id
+
+    override fun onBackPressed() {
+        findNavController().popBackStack(R.id.signInFragment, true)
+    }
 
 }

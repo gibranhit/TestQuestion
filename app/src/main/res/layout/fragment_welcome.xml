@@ -30,7 +30,7 @@
         <ImageView
             android:id="@+id/ivSelectTest"
             android:layout_width="wrap_content"
-            android:layout_height="300dp"
+            android:layout_height="250dp"
             android:src="@drawable/ic_welcome"
             android:padding="@dimen/big_separation_20"
             app:layout_constraintTop_toTopOf="parent"
@@ -45,11 +45,11 @@
             app:layout_constraintTop_toBottomOf="@id/ivSelectTest"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="Bienvenido!\n MyTests es una aplicación en donde podrás realizar diferentes tests sobre diferentes tipos de estrés y se te darán posibles soluciones dependiendo los resultados."
+            android:text="MyTests es una aplicación en donde podrás realizar diferentes tests sobre diferentes tipos de estrés y se te darán posibles soluciones dependiendo los resultados."
             android:gravity="center"
             android:textColor="@color/colorPrimary"
             android:fontFamily="@font/proximanovaextrabold"
-            android:textSize="@dimen/big_text"
+            android:textSize="@dimen/bigger_text"
             android:layout_marginTop="@dimen/biggest_separation"/>
 
         <androidx.appcompat.widget.AppCompatButton
@@ -59,7 +59,8 @@
             app:layout_constraintTop_toBottomOf="@id/tvTitleWelcome"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="Ingresar"
+            android:text="Comenzar"
+            android:textSize="@dimen/bigger_text"
             android:textColor="@color/white"
             android:textAllCaps="false"
             android:background="@drawable/shape_button_round"

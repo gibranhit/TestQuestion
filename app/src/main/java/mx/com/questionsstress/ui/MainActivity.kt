@@ -1,11 +1,12 @@
 package mx.com.questionsstress.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation.findNavController
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import mx.com.questionsstress.R
 import mx.com.questionsstress.ui.dashboard.listener.DashboardCommunication
+import mx.com.questionsstress.ui.dashboard.listener.OnBackStack
 import mx.com.questionsstress.ui.model.ResultTest
 import mx.com.questionsstress.ui.model.Test
 
@@ -31,13 +32,14 @@ class MainActivity : AppCompatActivity(), DashboardCommunication {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        val navController = findNavController(this, R.id.nav_host_fragment)
-        when (navController.currentDestination?.label) {
-            "dashboard_fragment" -> findNavController(this, R.id.nav_host_fragment).popBackStack(R.id.signInFragment, true)
-            "sign_in_fragment" -> finish()
-            else -> navController.popBackStack()
+        (supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as? NavHostFragment)?.let { nav ->
+            val currentFragment = nav.childFragmentManager.fragments[0]
+            val navController =  nav.navController
+            if (currentFragment is OnBackStack){
+                (currentFragment as OnBackStack).onBackPressed()
+            } else if (!navController.popBackStack()) {
+                navController.popBackStack()
+            }
         }
-
-
     }
 }
