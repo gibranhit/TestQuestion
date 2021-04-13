@@ -2,6 +2,7 @@ package mx.com.questionsstress.utils
 
 import androidx.fragment.app.Fragment
 import mx.com.questionsstress.R
+import mx.com.questionsstress.domain.models.response.QuestionResponse
 import mx.com.questionsstress.ui.model.Answer
 import mx.com.questionsstress.ui.model.PainLevel
 import mx.com.questionsstress.ui.model.ResultTest
@@ -23,7 +24,7 @@ object Helper {
         PainLevel( R.drawable.ic_1, 6)).toMutableList()
 
     fun getListQuestionStress()
-            = listOf(
+            = mutableListOf(
         Answer(R.drawable.ic_sleep, "Imposibilidad de conciliar el sueño. "),
         Answer(R.drawable.ic_doctor, "Jaquecas y dolores de cabeza. "),
         Answer(R.drawable.ic_cookie, "Indigestiones o molestias gastrointestinales."),
@@ -37,7 +38,7 @@ object Helper {
         Answer(R.drawable.ic_joyride, "Tentaciones fuertes de no levantarse por la mañana."),
         Answer(R.drawable.ic_doctors, "Tendencias a sudar o palpitaciones. "))
 
-    fun getFragments(list: List<Answer>): MutableList<Fragment>
+    fun getFragments(list: MutableList<QuestionResponse>): MutableList<Fragment>
         = list.map { QuestionFragment.newInstance(it) }.toMutableList()
 
     fun getSearchList()

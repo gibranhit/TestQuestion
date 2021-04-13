@@ -6,6 +6,7 @@ import mx.com.questionsstress.base.BaseViewModel
 import mx.com.questionsstress.domain.models.request.UserRequest
 import mx.com.questionsstress.domain.models.response.UserResponse
 import mx.com.questionsstress.domain.remote.ProcessStep
+import retrofit2.HttpException
 
 class SignInViewModel(private val useCase: SignInUseCase) : BaseViewModel() {
 
@@ -26,7 +27,14 @@ class SignInViewModel(private val useCase: SignInUseCase) : BaseViewModel() {
                 _user.postValue(it)
                 _step.postValue(ProcessStep.Finished)
             }.onFailure {
-                _step.postValue(ProcessStep.Error(it.localizedMessage.orEmpty()))
+               if ( it is HttpException){
+                   when (it.code()){
+                      403 ->_step.postValue(ProcessStep.Error("Usuario o contraseña incorrecta"))
+                   }
+               }else  {
+                   _step.postValue(ProcessStep.Error(it.localizedMessage.orEmpty()))
+
+               }
             }
         }
     }

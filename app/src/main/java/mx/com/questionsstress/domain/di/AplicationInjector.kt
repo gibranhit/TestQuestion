@@ -6,6 +6,8 @@ import mx.com.questionsstress.domain.remote.HttpInterceptor.createOkHttpIntercep
 import mx.com.questionsstress.domain.remote.ServiceEndpoints
 import mx.com.questionsstress.ui.login.SignInUseCase
 import mx.com.questionsstress.ui.login.SignInViewModel
+import mx.com.questionsstress.ui.teststress.TestStressUseCase
+import mx.com.questionsstress.ui.teststress.TestStressViewModel
 import okhttp3.OkHttpClient
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -21,6 +23,14 @@ val ApplicationModule = module {
 
     viewModel {
         SignInViewModel(get())
+    }
+
+    factory {
+        TestStressUseCase(get())
+    }
+
+    viewModel {
+        TestStressViewModel(get())
     }
 }
 

@@ -34,10 +34,11 @@
 
     <ImageView
         android:id="@+id/ivSelectTest"
-        android:layout_width="250dp"
-        android:layout_height="300dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:src="@drawable/ic_questions"
         android:padding="@dimen/big_separation_20"
+        app:layout_constraintTop_toBottomOf="@id/rvPainLevel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>

@@ -1,5 +1,6 @@
 package mx.com.questionsstress.ui.teststress
 
+import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,17 +12,29 @@ import androidx.viewpager2.widget.ViewPager2
 import kotlinx.android.synthetic.main.layout_header.*
 import kotlinx.android.synthetic.main.test_stress_fragment.*
 import mx.com.questionsstress.R
+import mx.com.questionsstress.databinding.TestStressFragmentBinding
+import mx.com.questionsstress.domain.models.response.TestResponse
+import mx.com.questionsstress.domain.remote.ProcessStep
 import mx.com.questionsstress.ui.adapter.QuestionsViewPagerAdapter
+import mx.com.questionsstress.ui.login.SignInViewModel
 import mx.com.questionsstress.ui.model.PainLevel
 import mx.com.questionsstress.ui.model.QuestionTest
 import mx.com.questionsstress.ui.model.Test
 import mx.com.questionsstress.ui.teststress.listener.BaseOnClickListener
 import mx.com.questionsstress.utils.Helper.getFragments
 import mx.com.questionsstress.utils.Helper.getListQuestionStress
+import mx.com.questionsstress.utils.extensions.configProgressBar
+import mx.com.questionsstress.utils.extensions.observe
+import mx.com.questionsstress.utils.extensions.snack
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class TestStressFragment : Fragment() {
 
+    private val viewModel: TestStressViewModel by viewModel()
+
     private var test: Test? = null
+
+    private val dialog: Dialog by lazy { configProgressBar(R.color.purple_200) }
 
     private var listQuestion: MutableList<QuestionTest> =  mutableListOf()
 
@@ -42,7 +55,7 @@ class TestStressFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         setUpTitle()
-        setUpViewPager()
+        setUpObserver()
     }
 
     private fun setUpTitle() {
@@ -51,8 +64,28 @@ class TestStressFragment : Fragment() {
         }
     }
 
-    private fun setUpViewPager() {
-        val questions = getListQuestionStress()
+    private fun setUpObserver() {
+        observe(viewModel.step, ::stepper)
+        observe(viewModel.test, ::setUpViewPager)
+    }
+
+    private fun loading(loaded: Boolean) {
+        if (loaded) dialog.show() else dialog.dismiss()
+    }
+
+    private fun stepper(step: ProcessStep) {
+        when(step) {
+            is ProcessStep.Loading -> loading(true)
+            is ProcessStep.Error -> {
+                loading(false)
+                snack(step.message)
+            }
+            is ProcessStep.Finished -> loading(false)
+        }
+    }
+
+    private fun setUpViewPager(test: TestResponse ) {
+        val questions = test.questions
         val maxQuestions = questions.size
         tvAnswerCount.text = "Pregunta 1/$maxQuestions"
         val questionsFragments = getFragments(questions)
