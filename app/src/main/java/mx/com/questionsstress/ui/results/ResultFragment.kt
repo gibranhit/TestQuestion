@@ -1,22 +1,36 @@
 package mx.com.questionsstress.ui.results
 
+import android.app.Dialog
 import android.os.Bundle
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import kotlinx.android.synthetic.main.item_search.view.*
 import kotlinx.android.synthetic.main.layout_header.*
 import kotlinx.android.synthetic.main.result_fragment.*
 import mx.com.questionsstress.R
+import mx.com.questionsstress.domain.models.request.ResultRequest
+import mx.com.questionsstress.domain.models.response.ResultResponse
+import mx.com.questionsstress.domain.remote.ProcessStep
 import mx.com.questionsstress.ui.dashboard.listener.OnBackStack
+import mx.com.questionsstress.ui.login.SignInFragment
+import mx.com.questionsstress.ui.teststress.TestStressViewModel
+import mx.com.questionsstress.utils.extensions.configProgressBar
+import mx.com.questionsstress.utils.extensions.getDataString
+import mx.com.questionsstress.utils.extensions.observe
+import mx.com.questionsstress.utils.extensions.snack
+import org.koin.android.viewmodel.ext.android.viewModel
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class ResultFragment : Fragment(R.layout.result_fragment), OnBackStack {
 
+    private val viewModel: ResultViewModel by viewModel()
+    private val dialog: Dialog by lazy { configProgressBar(R.color.purple_200) }
     private var count = 0
     private var title: String? = ""
-
-    private val colors = arrayOf("#03A9F4", "#5CEF00" ,"#FFEB3B","#ef6c00", "#F44336")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,19 +49,15 @@ class ResultFragment : Fragment(R.layout.result_fragment), OnBackStack {
         if (count > 60)
             tvAdvice.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorRed))
         buttonFinish.setOnClickListener {
-            findNavController().popBackStack(R.id.dashboardFragment, false)
+            val email = getDataString(SignInFragment.NAME_PREFERENCES_TEST, SignInFragment.KEY_EMAIL)
+            val actualDate = Date()
+            val date = SimpleDateFormat("dd 'de' MMMM yyyy", Locale("es", "MX")).format(actualDate)
+            viewModel.createResult(ResultRequest(maxScore = 76, score = count, title = title.orEmpty(), date = date, typeTest = 0, correo = email))
         }
         progressHorizontal.progress = count
         progressHorizontal.progressDrawable.setTint(
                 resources.getColor(getColorProgress()))
-    }
-
-    private fun getColor(): String = when {
-        count <= 22 -> colors[0]
-        count <= 32 -> colors[1]
-        count <= 48 -> colors[2]
-        count <= 60 -> colors[3]
-        else -> colors[4]
+        observe(viewModel.step, ::stepper)
     }
 
     private fun getColorProgress(): Int = when {
@@ -87,6 +97,25 @@ class ResultFragment : Fragment(R.layout.result_fragment), OnBackStack {
 
     override fun onBackPressed() {
         findNavController().popBackStack(R.id.dashboardFragment, false)
+    }
+
+    private fun loading(loaded: Boolean) {
+        if (loaded) dialog.show() else dialog.dismiss()
+    }
+
+    private fun stepper(step: ProcessStep) {
+        when(step) {
+            is ProcessStep.Loading -> loading(true)
+            is ProcessStep.Error -> {
+                loading(false)
+                snack(step.message)
+            }
+            is ProcessStep.Finished -> {
+                loading(false)
+                snack("Tu Test se guardo correctamente.")
+                onBackPressed()
+            }
+        }
     }
 
 }

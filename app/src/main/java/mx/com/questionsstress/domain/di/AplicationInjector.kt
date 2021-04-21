@@ -4,8 +4,12 @@ import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.skydoves.sandwich.coroutines.CoroutinesResponseCallAdapterFactory
 import mx.com.questionsstress.domain.remote.HttpInterceptor.createOkHttpInterceptor
 import mx.com.questionsstress.domain.remote.ServiceEndpoints
+import mx.com.questionsstress.ui.dashboard.search.SearchUseCase
+import mx.com.questionsstress.ui.dashboard.search.SearchViewModel
 import mx.com.questionsstress.ui.login.SignInUseCase
 import mx.com.questionsstress.ui.login.SignInViewModel
+import mx.com.questionsstress.ui.results.ResultUseCase
+import mx.com.questionsstress.ui.results.ResultViewModel
 import mx.com.questionsstress.ui.teststress.TestStressUseCase
 import mx.com.questionsstress.ui.teststress.TestStressViewModel
 import okhttp3.OkHttpClient
@@ -31,6 +35,22 @@ val ApplicationModule = module {
 
     viewModel {
         TestStressViewModel(get())
+    }
+
+    factory {
+        ResultUseCase(get())
+    }
+
+    viewModel {
+        ResultViewModel(get())
+    }
+
+    factory {
+        SearchUseCase(get())
+    }
+
+    viewModel {
+        SearchViewModel(get())
     }
 }
 

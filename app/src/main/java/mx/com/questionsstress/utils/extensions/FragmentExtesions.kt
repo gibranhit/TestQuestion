@@ -71,3 +71,14 @@ fun Fragment.configProgressBar(color: Int) : Dialog {
     dialog.setCancelable(false)
     return dialog
 }
+
+fun Fragment.getDataString(name: String, key: String): String =
+        requireContext().getSharedPreferences(name, Context.MODE_PRIVATE).run {
+            getString(key, "").orEmpty()
+        }
+
+fun Fragment.saveDataString(name: String, key: String, value: String) {
+    requireContext().getSharedPreferences(name, Context.MODE_PRIVATE).apply {
+        edit().putString(key, value).apply()
+    }
+}

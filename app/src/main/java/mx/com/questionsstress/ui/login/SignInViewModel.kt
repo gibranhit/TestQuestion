@@ -1,42 +1,45 @@
 package mx.com.questionsstress.ui.login
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import mx.com.questionsstress.base.BaseViewModel
 import mx.com.questionsstress.domain.models.request.UserRequest
 import mx.com.questionsstress.domain.models.response.UserResponse
-import mx.com.questionsstress.domain.remote.ProcessStep
+import mx.com.questionsstress.utils.Event
 import retrofit2.HttpException
 
 class SignInViewModel(private val useCase: SignInUseCase) : BaseViewModel() {
 
-    private var _user = MutableLiveData<UserResponse>()
-    val user: LiveData<UserResponse>
+    private var _user = MutableStateFlow<Event<LoginUiState>>(Event(LoginUiState.Empty))
+    val user: StateFlow<Event<LoginUiState>>
         get() = _user
 
-    private val _step = MutableLiveData<ProcessStep>()
-    val step: LiveData<ProcessStep>
-        get() = _step
 
     fun signIn(userRequest: UserRequest){
-        _step.postValue(ProcessStep.Loading)
+        _user.value = Event(LoginUiState.Loading)
         main {
             runCatching {
                 useCase.signIn(userRequest)
             }.onSuccess {
-                _user.postValue(it)
-                _step.postValue(ProcessStep.Finished)
+                _user.value = Event(LoginUiState.Success(it))
             }.onFailure {
                if ( it is HttpException){
-                   when (it.code()){
-                      403 ->_step.postValue(ProcessStep.Error("Usuario o contraseña incorrecta"))
+                   when (it.code()) {
+                      403 -> _user.value = Event(LoginUiState.Error("Usuario o contraseña incorrecta"))
                    }
                }else  {
-                   _step.postValue(ProcessStep.Error(it.localizedMessage.orEmpty()))
-
+                   _user.value = Event(LoginUiState.Error(it.localizedMessage.orEmpty()))
                }
             }
         }
     }
 
+    sealed class LoginUiState {
+        object Empty: LoginUiState()
+        object Loading: LoginUiState()
+        data class Success(val response: UserResponse): LoginUiState()
+        data class Error(val message: String): LoginUiState()
+    }
+
 }
+
