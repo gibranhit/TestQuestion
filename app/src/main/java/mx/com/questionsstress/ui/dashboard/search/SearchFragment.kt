@@ -3,6 +3,7 @@ package mx.com.questionsstress.ui.dashboard.search
 import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
+import android.view.View
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.layout_header.*
 import kotlinx.android.synthetic.main.search_fragment.*
@@ -66,10 +67,12 @@ class SearchFragment : Fragment(R.layout.search_fragment) {
     }
 
     private fun setUpTest(results: MutableList<ResultResponse>) {
-        rvSearchTest.run {
+        tvEmptyList.visibility  = if (results.isEmpty()) View.VISIBLE else View.GONE
+        rvSearchTest.apply {
             adapter = SearchTestAdapter(results){
                 communication?.selectSearchTest(it)
             }
+            visibility = if (results.isEmpty()) View.GONE else View.VISIBLE
         }
     }
 

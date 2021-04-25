@@ -26,7 +26,23 @@
         android:layout_marginEnd="@dimen/big_separation_20"
         app:layout_constraintBottom_toTopOf="@id/ivSelectTest"
         app:layout_constraintTop_toBottomOf="@+id/guideBody"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+    <TextView
+        android:id="@+id/tvEmptyList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/big_separation_20"
+        android:layout_marginEnd="@dimen/big_separation_20"
+        app:layout_constraintBottom_toTopOf="@id/ivSelectTest"
+        app:layout_constraintTop_toBottomOf="@+id/guideBody"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="@dimen/bigger_text_22"
+        android:fontFamily="@font/proximanovaextrabold"
+        android:textColor="@color/colorPrimary"
+        android:text="No se han encontrado resultados."/>
 
     <ImageView
         android:id="@+id/ivSelectTest"
