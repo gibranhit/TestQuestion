@@ -20,6 +20,7 @@ import mx.com.questionsstress.ui.login.SignInViewModel
 import mx.com.questionsstress.ui.model.PainLevel
 import mx.com.questionsstress.ui.model.QuestionTest
 import mx.com.questionsstress.ui.model.Test
+import mx.com.questionsstress.ui.results.ResultFragment
 import mx.com.questionsstress.ui.teststress.listener.BaseOnClickListener
 import mx.com.questionsstress.utils.Helper.getFragments
 import mx.com.questionsstress.utils.Helper.getListQuestionStress
@@ -112,8 +113,9 @@ class TestStressFragment : Fragment() {
                 if (vpQuestions.currentItem == list.size -1){
                     val count = listQuestion.map { it.level }.sum()
                     val bundle = Bundle().apply {
-                        putInt("count", count)
-                        putString("title", test?.title)
+                        putInt(ResultFragment.ARG_COUNT, count)
+                        putString(ResultFragment.ARG_TITLE, test?.title)
+                        putInt(ResultFragment.ARG_TYPE, test?.type?: 0)
                     }
                     findNavController().navigate(R.id.action_testStressFragment_to_resultFragment, bundle)
                 }

@@ -9,6 +9,9 @@ import mx.com.questionsstress.domain.models.response.ResultResponse
 import mx.com.questionsstress.domain.models.response.TestResponse
 import mx.com.questionsstress.ui.dashboard.listener.DashboardCommunication
 import mx.com.questionsstress.ui.dashboard.listener.OnBackStack
+import mx.com.questionsstress.ui.results.ResultFragment.Companion.ARG_COUNT
+import mx.com.questionsstress.ui.results.ResultFragment.Companion.ARG_TITLE
+import mx.com.questionsstress.ui.results.ResultFragment.Companion.ARG_TYPE
 
 class MainActivity : AppCompatActivity(), DashboardCommunication {
 
@@ -24,8 +27,9 @@ class MainActivity : AppCompatActivity(), DashboardCommunication {
 
     override fun selectSearchTest(result: ResultResponse) {
         val bundle = Bundle().apply {
-            putInt("count", result.score)
-            putString("title", result.title)
+            putInt(ARG_COUNT, result.score)
+            putString(ARG_TITLE, result.title)
+            putInt(ARG_TYPE, result.typeTest)
         }
         findNavController(this, R.id.nav_host_fragment).navigate(R.id.action_dashboardFragment_to_resultFragment, bundle)
     }

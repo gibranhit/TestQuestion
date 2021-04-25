@@ -31,12 +31,20 @@ class ResultFragment : Fragment(R.layout.result_fragment), OnBackStack {
     private val dialog: Dialog by lazy { configProgressBar(R.color.purple_200) }
     private var count = 0
     private var title: String? = ""
+    private var type = 0
+
+    companion object {
+        const val ARG_COUNT = "arg_count"
+        const val ARG_TITLE = "arg_title"
+        const val ARG_TYPE = "arg_test"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            count = it.getInt("count")
-            title = it.getString("title")
+            count = it.getInt(ARG_COUNT)
+            title = it.getString(ARG_TITLE)
+            type = it.getInt(ARG_TYPE)
         }
     }
 
@@ -52,7 +60,7 @@ class ResultFragment : Fragment(R.layout.result_fragment), OnBackStack {
             val email = getDataString(SignInFragment.NAME_PREFERENCES_TEST, SignInFragment.KEY_EMAIL)
             val actualDate = Date()
             val date = SimpleDateFormat("dd 'de' MMMM yyyy", Locale("es", "MX")).format(actualDate)
-            viewModel.createResult(ResultRequest(maxScore = 76, score = count, title = title.orEmpty(), date = date, typeTest = 0, correo = email))
+            viewModel.createResult(ResultRequest(maxScore = 76, score = count, title = title.orEmpty(), date = date, typeTest = type, correo = email))
         }
         progressHorizontal.progress = count
         progressHorizontal.progressDrawable.setTint(
