@@ -17,9 +17,6 @@ class TestStressViewModel(private val useCase: TestStressUseCase) : BaseViewMode
     val step: LiveData<ProcessStep>
         get() = _step
 
-    init {
-        getQuestions()
-    }
 
     fun getQuestions(){
         _step.postValue(ProcessStep.Loading)

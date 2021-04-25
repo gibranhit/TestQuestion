@@ -32,7 +32,7 @@ class TestStressFragment : Fragment() {
 
     private val viewModel: TestStressViewModel by viewModel()
 
-    private var test: Test? = null
+    private var test: TestResponse? = null
 
     private val dialog: Dialog by lazy { configProgressBar(R.color.purple_200) }
 
@@ -60,7 +60,8 @@ class TestStressFragment : Fragment() {
 
     private fun setUpTitle() {
         test?.let {
-            tvTitle.text = it.name
+            tvTitle.text = it.title
+            setUpViewPager(it)
         }
     }
 
@@ -112,7 +113,7 @@ class TestStressFragment : Fragment() {
                     val count = listQuestion.map { it.level }.sum()
                     val bundle = Bundle().apply {
                         putInt("count", count)
-                        putString("title", test?.name)
+                        putString("title", test?.title)
                     }
                     findNavController().navigate(R.id.action_testStressFragment_to_resultFragment, bundle)
                 }

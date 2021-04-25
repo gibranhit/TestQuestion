@@ -17,6 +17,9 @@ interface ServiceEndpoints {
     @GET("v1/api/test/0")
     suspend fun getQuestions(): TestResponse
 
+    @GET("v1/api/test/")
+    suspend fun getTest(): MutableList<TestResponse>
+
     @POST("v1/api/result")
     suspend fun createResults(@Body body: ResultRequest): ResultResponse
 

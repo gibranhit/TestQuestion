@@ -6,9 +6,9 @@ import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import mx.com.questionsstress.R
 import mx.com.questionsstress.domain.models.response.ResultResponse
+import mx.com.questionsstress.domain.models.response.TestResponse
 import mx.com.questionsstress.ui.dashboard.listener.DashboardCommunication
 import mx.com.questionsstress.ui.dashboard.listener.OnBackStack
-import mx.com.questionsstress.ui.model.Test
 
 class MainActivity : AppCompatActivity(), DashboardCommunication {
 
@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity(), DashboardCommunication {
         setContentView(R.layout.activity_main)
     }
 
-    override fun selectTest(test: Test) {
+    override fun selectTest(test: TestResponse) {
         val bundle = Bundle().apply { putParcelable("test", test) }
         findNavController(this, R.id.nav_host_fragment).navigate(R.id.action_dashboardFragment_to_testStressFragment, bundle)
     }

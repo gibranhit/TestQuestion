@@ -10,6 +10,8 @@ import mx.com.questionsstress.ui.login.SignInUseCase
 import mx.com.questionsstress.ui.login.SignInViewModel
 import mx.com.questionsstress.ui.results.ResultUseCase
 import mx.com.questionsstress.ui.results.ResultViewModel
+import mx.com.questionsstress.ui.selecttest.SelectTestUseCase
+import mx.com.questionsstress.ui.selecttest.SelectTestViewModel
 import mx.com.questionsstress.ui.teststress.TestStressUseCase
 import mx.com.questionsstress.ui.teststress.TestStressViewModel
 import okhttp3.OkHttpClient
@@ -51,6 +53,14 @@ val ApplicationModule = module {
 
     viewModel {
         SearchViewModel(get())
+    }
+
+    factory {
+        SelectTestUseCase(get())
+    }
+
+    viewModel {
+        SelectTestViewModel(get())
     }
 }
 
